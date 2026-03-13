@@ -1,0 +1,121 @@
+# Phase 06 — Microservices E-Commerce System
+# Local development infrastructure
+#
+# Usage:
+#   docker-compose up -d          Start all infrastructure services
+#   docker-compose logs -f kafka  Follow Kafka logs
+#   docker-compose down -v        Stop and remove volumes
+#
+# TODO:
+#   - Add service containers for each microservice once Dockerfiles are created.
+#   - Replace H2 with PostgreSQL per-service databases.
+#   - Add a config-server container pointing at a git repo or local volume.
+#   - Add network aliases so services can discover each other by name.
+
+services:
+
+  # ─── Zookeeper (required by Kafka) ─────────────────────────────────────
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.7.1
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  # ─── Apache Kafka ──────────────────────────────────────────────────────
+  kafka:
+    image: confluentinc/cp-kafka:7.7.1
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+
+  # ─── Zipkin (distributed tracing) ──────────────────────────────────────
+  zipkin:
+    image: openzipkin/zipkin:3
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+
+  # ─── PostgreSQL (shared instance, separate databases per service) ──────
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # TODO: mount an init script that creates per-service databases:
+      #   CREATE DATABASE order_db;
+      #   CREATE DATABASE inventory_db;
+      #   CREATE DATABASE payment_db;
+
+  # ─── Eureka Discovery Server ───────────────────────────────────────────
+  # TODO: build from discovery-server module
+  # discovery-server:
+  #   build: ./discovery-server
+  #   container_name: discovery-server
+  #   ports:
+  #     - "8761:8761"
+
+  # ─── Config Server ─────────────────────────────────────────────────────
+  # TODO: build from config-server module
+  # config-server:
+  #   build: ./config-server
+  #   container_name: config-server
+  #   ports:
+  #     - "8888:8888"
+  #   depends_on:
+  #     - discovery-server
+  #   environment:
+  #     SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/your-org/config-repo
+
+  # ─── API Gateway ───────────────────────────────────────────────────────
+  # TODO: build from api-gateway module
+  # api-gateway:
+  #   build: ./api-gateway
+  #   container_name: api-gateway
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - discovery-server
+  #     - config-server
+
+  # ─── Order Service ─────────────────────────────────────────────────────
+  # TODO: build from order-service module
+  # order-service:
+  #   build: ./order-service
+  #   container_name: order-service
+  #   depends_on:
+  #     - postgres
+  #     - kafka
+  #     - discovery-server
+  #   environment:
+  #     SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/order_db
+
+  # ─── Inventory Service ─────────────────────────────────────────────────
+  # TODO: build from inventory-service module
+
+  # ─── Payment Service ───────────────────────────────────────────────────
+  # TODO: build from payment-service module
+
+  # ─── Notification Service ──────────────────────────────────────────────
+  # TODO: build from notification-service module
+
+volumes:
+  pgdata:
