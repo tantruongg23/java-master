@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d913ef7e-6987-46ac-9e5f-1016217d13fa" name="Changes" comment="phase 1 exercises and test">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-01-fundamentals/exercises/target/classes/exercises/StringToolkit.class" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-01-fundamentals/exercises/target/classes/exercises/StringToolkit.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tan-troung_nivel&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tantruongg23/java-master.git&quot;,
+    &quot;accountId&quot;: &quot;5032fcf7-3cca-40ef-ac55-b9f6685d471d&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/temurin-21.0.9/lib/src.zip!/java.base/java/lang/Double.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/temurin-21.0.9/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/temurin-21.0.9/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="C:\Users\tuoh\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3Av25bopKLCGAnTDDpPAm2J78pp" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CliCalculator.executor": "Debug",
+    "JUnit.CliCalculatorTest.executor": "Coverage",
+    "JUnit.StringToolkitTest$CompressTests.executor": "Run",
+    "JUnit.StringToolkitTest$CompressTests.testCompressBoundary.executor": "Debug",
+    "JUnit.StringToolkitTest$CompressTests.testCompressSimple.executor": "Run",
+    "JUnit.StringToolkitTest$EdgeCasesTests.testWhitespaceOnly.executor": "Run",
+    "JUnit.StringToolkitTest$IsPalindromeTests.executor": "Run",
+    "JUnit.StringToolkitTest$IsPalindromeTests.testPalindromeCaseInsensitive.executor": "Run",
+    "JUnit.StringToolkitTest$IsPalindromeTests.testPalindromeWithSpaces.executor": "Run",
+    "JUnit.StringToolkitTest$MostFrequentCharTests.testMostFrequentVariousStrings.executor": "Debug",
+    "JUnit.StringToolkitTest$PerformanceTests.testLargeCompression.executor": "Debug",
+    "JUnit.StringToolkitTest$ReverseTests.testReverseSimpleString.executor": "Run",
+    "JUnit.StringToolkitTest$ToTitleCaseTests.executor": "Run",
+    "JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseMultipleSpaces.executor": "Debug",
+    "JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseSimple.executor": "Debug",
+    "JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseWithNumbers.executor": "Debug",
+    "JUnit.StringToolkitTest.executor": "Run",
+    "JUnit.StringToolkitTest.testCapitalize.executor": "Run",
+    "Maven.phase-01-fundamentals [clean,install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Workspace/Angular/quadrel-starter/java-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.StringToolkitTest">
+    <configuration name="StringToolkitTest$ToTitleCaseTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phase-01-fundamentals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises.StringToolkitTest" />
+      <option name="MAIN_CLASS_NAME" value="exercises.StringToolkitTest$ToTitleCaseTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringToolkitTest$ToTitleCaseTests.testToTitleCaseMultipleSpaces" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phase-01-fundamentals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises.StringToolkitTest" />
+      <option name="MAIN_CLASS_NAME" value="exercises.StringToolkitTest$ToTitleCaseTests" />
+      <option name="METHOD_NAME" value="testToTitleCaseMultipleSpaces" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringToolkitTest$ToTitleCaseTests.testToTitleCaseSimple" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phase-01-fundamentals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises.StringToolkitTest" />
+      <option name="MAIN_CLASS_NAME" value="exercises.StringToolkitTest$ToTitleCaseTests" />
+      <option name="METHOD_NAME" value="testToTitleCaseSimple" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringToolkitTest$ToTitleCaseTests.testToTitleCaseWithNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phase-01-fundamentals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises.StringToolkitTest" />
+      <option name="MAIN_CLASS_NAME" value="exercises.StringToolkitTest$ToTitleCaseTests" />
+      <option name="METHOD_NAME" value="testToTitleCaseWithNumbers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringToolkitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phase-01-fundamentals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exercises" />
+      <option name="MAIN_CLASS_NAME" value="exercises.StringToolkitTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseSimple" />
+      <item itemvalue="JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseWithNumbers" />
+      <item itemvalue="JUnit.StringToolkitTest$ToTitleCaseTests" />
+      <item itemvalue="JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseMultipleSpaces" />
+      <item itemvalue="JUnit.StringToolkitTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StringToolkitTest" />
+        <item itemvalue="JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseWithNumbers" />
+        <item itemvalue="JUnit.StringToolkitTest$ToTitleCaseTests" />
+        <item itemvalue="JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseSimple" />
+        <item itemvalue="JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseMultipleSpaces" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d913ef7e-6987-46ac-9e5f-1016217d13fa" name="Changes" comment="" />
+      <created>1773458540762</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773458540762</updated>
+      <workItem from="1773458542087" duration="2527000" />
+      <workItem from="1773461200221" duration="6201000" />
+      <workItem from="1773469717297" duration="3233000" />
+      <workItem from="1773474338472" duration="1907000" />
+    </task>
+    <task id="LOCAL-00001" summary="phase 1 exercises and test">
+      <option name="closed" value="true" />
+      <created>1773476371211</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773476371211</updated>
+    </task>
+    <task id="LOCAL-00002" summary="phase 1 exercises and test">
+      <option name="closed" value="true" />
+      <created>1773476525038</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773476525038</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="phase 1 exercises and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="phase 1 exercises and test" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/part-1-core-java/phase-01-fundamentals/exercises/src/test/java/exercises/StringToolkitTest.java</url>
+          <line>164</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/part-1-core-java/phase-01-fundamentals/exercises/src/test/java/exercises/StringToolkitTest.java</url>
+          <line>1041</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/part-1-core-java/phase-01-fundamentals/exercises/src/test/java/exercises/StringToolkitTest.java</url>
+          <line>1040</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/part-1-core-java/phase-01-fundamentals/exercises/src/main/java/exercises/StringToolkit.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/java_master$CliCalculatorTest.ic" NAME="CliCalculatorTest Coverage Results" MODIFIED="1773461402354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>exercises.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
