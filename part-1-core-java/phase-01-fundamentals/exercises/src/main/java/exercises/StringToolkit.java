@@ -1,5 +1,9 @@
 package exercises;
 
+import java.time.Instant;
+import java.util.LinkedHashMap;
+import java.util.Set;
+
 /**
  * StringToolkit — a null-safe, performance-oriented string utility library.
  *
@@ -23,8 +27,12 @@ public final class StringToolkit {
     public static String reverse(String input) {
         // TODO: Use StringBuilder.reverse() or manual iteration.
         //       Remember to handle null and empty inputs first.
-
-        throw new UnsupportedOperationException("TODO: implement reverse()");
+        if (isEmpty(input)) return input;
+        StringBuilder output = new StringBuilder();
+        for (int i = input.length() - 1; i >= 0; i--) {
+            output.append(input.charAt(i));
+        }
+        return output.toString();
     }
 
     /**
@@ -39,7 +47,35 @@ public final class StringToolkit {
         //       2. Strip non-alphanumeric chars and convert to lowercase.
         //       3. Compare with its reverse (or use two-pointer approach).
 
-        throw new UnsupportedOperationException("TODO: implement isPalindrome()");
+        if (input == null || input.isEmpty()) {
+            return false;
+        }
+
+        int left = 0;
+        int right = input.length() - 1;
+
+        while (left < right) {
+
+            while (left < right && !Character.isLetterOrDigit(input.charAt(left))) {
+                left++;
+            }
+
+            while (left < right && !Character.isLetterOrDigit(input.charAt(right))) {
+                right--;
+            }
+
+            char l = Character.toLowerCase(input.charAt(left));
+            char r = Character.toLowerCase(input.charAt(right));
+
+            if (l != r) {
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
     }
 
     /**
@@ -51,8 +87,16 @@ public final class StringToolkit {
     public static int countVowels(String input) {
         // TODO: Iterate over each char, check if it's a vowel.
         //       Use a Set or a String "aeiouAEIOU".contains(...) approach.
+        if (isEmpty(input)) return 0;
 
-        throw new UnsupportedOperationException("TODO: implement countVowels()");
+        Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u');
+        int count = 0;
+        for (char c : input.toCharArray()) {
+            if (vowels.contains(Character.toLowerCase(c))) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -64,11 +108,31 @@ public final class StringToolkit {
      * @return title-cased string, or {@code null}/{@code ""} for null/empty input
      */
     public static String toTitleCase(String input) {
-        // TODO: 1. Split by whitespace.
-        //       2. Capitalize the first character of each word.
-        //       3. Join back with spaces using StringBuilder.
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
 
-        throw new UnsupportedOperationException("TODO: implement toTitleCase()");
+        StringBuilder output = new StringBuilder(input.length());
+        boolean capitalizeNext = true;
+
+        for (char c : input.toCharArray()) {
+
+            if (Character.isWhitespace(c)) {
+                capitalizeNext = true;
+                output.append(c);
+            } else if (capitalizeNext) {
+                output.append(Character.toUpperCase(c));
+                capitalizeNext = false;
+            } else {
+                output.append(c);
+            }
+        }
+
+        return output.toString();
+    }
+
+    public static boolean isEmpty(String input) {
+        return input == null || input.isBlank();
     }
 
     /**
@@ -86,8 +150,24 @@ public final class StringToolkit {
         // TODO: 1. Walk through the string tracking current char and its count.
         //       2. Append char + count to a StringBuilder when the char changes.
         //       3. Compare lengths; return the shorter one.
+        if (isEmpty(input)) return input;
 
-        throw new UnsupportedOperationException("TODO: implement compress()");
+        StringBuilder output = new StringBuilder();
+        int count = 1;
+        for (int i = 1; i < input.length(); i++) {
+
+            if (input.charAt(i) == input.charAt(i - 1)) {
+                count++;
+            } else {
+                output.append(input.charAt(i - 1)).append(count);
+                count = 1;
+            }
+        }
+
+        // append last character group
+        output.append(input.charAt(input.length() - 1)).append(count);
+
+        return output.length() < input.length() ? output.toString() : input;
     }
 
     /**
@@ -103,8 +183,20 @@ public final class StringToolkit {
         // TODO: 1. Validate input (throw IllegalArgumentException if null/empty).
         //       2. Count occurrences of each char (array of size 128 or a Map).
         //       3. Track the max count AND the earliest index of the max char.
-
-        throw new UnsupportedOperationException("TODO: implement mostFrequentChar()");
+        if (isEmpty(input)) throw new IllegalArgumentException("Input cannot be empty");
+        LinkedHashMap<Character, Integer> counts = new LinkedHashMap<>();
+        for (char c : input.toCharArray()) {
+            counts.put(c, counts.getOrDefault(c, 0) + 1);
+        }
+        int maxCount = 0;
+        char maxChar = ' ';
+        for (char c : counts.keySet()) {
+            if (counts.get(c) > maxCount) {
+                maxCount = counts.get(c);
+                maxChar = c;
+            }
+        }
+        return maxChar;
     }
 
     /**
@@ -119,7 +211,20 @@ public final class StringToolkit {
         //   1. Time String += in a loop for 'iterations' rounds.
         //   2. Time StringBuilder.append() for the same number.
         //   3. Print both durations and the ratio.
+        Instant start = Instant.now();
+        String str = "";
+        for (int i = 0; i < iterations; i++) {
+            str += 'a';
+        }
+        Instant end = Instant.now();
+        System.out.println("String +=: " + (end.toEpochMilli() - start.toEpochMilli()) + " ms");
 
-        throw new UnsupportedOperationException("BONUS TODO: implement benchmarkConcat()");
+        start = Instant.now();
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < iterations; i++) {
+            builder.append('a');
+        }
+        end = Instant.now();
+        System.out.println("String +=: " + (end.toEpochMilli() - start.toEpochMilli()) + " ms");
     }
 }

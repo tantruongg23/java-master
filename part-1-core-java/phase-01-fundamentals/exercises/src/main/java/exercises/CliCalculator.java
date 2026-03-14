@@ -1,6 +1,8 @@
 package exercises;
 
+import java.util.Objects;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * CLI Calculator — a REPL-based arithmetic calculator.
@@ -17,6 +19,26 @@ import java.util.Scanner;
  *   > exit
  * </pre>
  */
+
+enum Operator {
+    PLUS("+"), MINUS("-"), MULTIPLY("*"), DIVIDE("/"), MODULO("%"), POWER("^");
+    private final String symbol;
+    Operator(String symbol) {
+        this.symbol = symbol;
+    }
+    public String getSymbol() {
+        return symbol;
+    }
+    public static Operator fromSymbol(String symbol) {
+        for (Operator op : Operator.values()) {
+            if (op.getSymbol().equals(symbol)) {
+                return op;
+            }
+        }
+        throw new IllegalArgumentException("Unknown operator: " + symbol);
+    }
+}
+
 public class CliCalculator {
 
     private static final int MAX_HISTORY = 10;
@@ -84,8 +106,41 @@ public class CliCalculator {
         //       4. Delegate to calculate(double, String, double).
 
         // BONUS: Support parenthesized sub-expressions and operator precedence.
+        try {
+            expression = expression.trim();
+            Stack<String> stack = new Stack<>();
+            int i = 0;
+            StringBuilder sub = new StringBuilder();
+            while (i < expression.length()) {
+                if (expression.charAt(i) == '(') {
+                    stack.push("(");
+                    while (i < expression.length() && expression.charAt(i) != ')') {
+                        sub.append(expression.charAt(i));
+                        i++;
+                    }
+                }
+                else if (expression.charAt(i) == ')') {
 
-        throw new UnsupportedOperationException("TODO: implement evaluate()");
+                }
+                else if (expression.charAt(i) == '+') {
+
+                }
+                else if (expression.charAt(i) == '-') {
+
+                }
+
+            }
+            String[] parts = expression.split(" ");
+            if (parts.length != 3) {
+                throw new IllegalArgumentException("Invalid expression");
+            }
+            double left = Double.parseDouble(parts[0]);
+            String operator = parts[1];
+            double right = Double.parseDouble(parts[2]);
+            return calculate(left, operator, right);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Invalid number format");
+        }
     }
 
     /**
@@ -99,16 +154,24 @@ public class CliCalculator {
      * @throws IllegalArgumentException if the operator is unknown
      */
     public double calculate(double left, String operator, double right) {
-        // TODO: Implement each operator.
-        //       - "+" → left + right
-        //       - "-" → left - right
-        //       - "*" → left * right
-        //       - "/" → check right != 0, then left / right
-        //       - "%" → check right != 0, then left % right
-        //       - "^" → Math.pow(left, right)
-        //       - else → throw IllegalArgumentException
-
-        throw new UnsupportedOperationException("TODO: implement calculate()");
+        return switch (Operator.fromSymbol(operator)) {
+            case Operator.PLUS -> left + right;
+            case Operator.MINUS -> left - right;
+            case Operator.MULTIPLY -> left * right;
+            case Operator.DIVIDE -> {
+                if (right == 0) {
+                    throw new ArithmeticException("Division by zero");
+                }
+                yield left / right;
+            }
+            case Operator.MODULO -> {
+                if (right == 0) {
+                    throw new ArithmeticException("Modulo by zero");
+                }
+                yield left % right;
+            }
+            case Operator.POWER -> Math.pow(left, right);
+        };
     }
 
     /**
@@ -117,19 +180,22 @@ public class CliCalculator {
      * @param entry formatted as "expression = result"
      */
     private void addToHistory(String entry) {
-        // TODO: Store entry in the history array.
-        //       Use modular arithmetic to wrap around when MAX_HISTORY is reached.
-
-        throw new UnsupportedOperationException("TODO: implement addToHistory()");
+        history[historyCount % MAX_HISTORY] = entry;
+        historyCount++;
+        if (historyCount == MAX_HISTORY) {
+            historyCount = 0;
+        }
     }
 
     /**
      * Print all stored history entries, oldest first.
      */
     private void printHistory() {
-        // TODO: Iterate over the history array and print non-null entries.
-        //       Format: [1] 12.5 + 3 = 15.5
-
-        throw new UnsupportedOperationException("TODO: implement printHistory()");
+        // Format: [1] 12.5 + 3 = 15.5
+        for (int i = 0; i < history.length; i++) {
+            if (Objects.nonNull(history[i])) {
+                System.out.println("[" + i + 1 + "] " + history[i]);
+            }
+        }
     }
 }
