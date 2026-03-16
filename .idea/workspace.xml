@@ -4,47 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d913ef7e-6987-46ac-9e5f-1016217d13fa" name="Changes" comment="phase 2 study guide">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/Contractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/FullTimeEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/PartTimeEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/PayrollReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/Borrowable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/BorrowingRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/DVD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/LibraryDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/Magazine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/OverdueNotifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/OverdueObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/Patron.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/Searchable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/BankTransferPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/CreditCardPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/CryptoPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/DebitCardPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/PaymentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/PaypalPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-01-fundamentals/exercises/target/classes/exercises/StringToolkit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/employee/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/LibraryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/library/LibraryItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/PaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/PaymentProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/PaymentProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/PaymentResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/src/main/java/exercises/payment/PaymentResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/employee/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/employee/Department.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/employee/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/employee/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/library/LibraryItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/library/LibraryItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/payment/PaymentProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/payment/PaymentProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/payment/PaymentResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-02-oop-deep-dive/exercises/target/classes/exercises/payment/PaymentResult.class" afterDir="false" />
+    <list default="true" id="d913ef7e-6987-46ac-9e5f-1016217d13fa" name="Changes" comment="phase 2 exercises">
+      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-03-collections-generics/STUDY-GUIDE.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,50 +61,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CliCalculator.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BankTransferPaymentTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CliCalculatorTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.StringToolkitTest$CompressTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StringToolkitTest$CompressTests.testCompressBoundary.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StringToolkitTest$CompressTests.testCompressSimple.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StringToolkitTest$EdgeCasesTests.testWhitespaceOnly.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StringToolkitTest$IsPalindromeTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StringToolkitTest$IsPalindromeTests.testPalindromeCaseInsensitive.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StringToolkitTest$IsPalindromeTests.testPalindromeWithSpaces.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StringToolkitTest$MostFrequentCharTests.testMostFrequentVariousStrings.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StringToolkitTest$PerformanceTests.testLargeCompression.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StringToolkitTest$ReverseTests.testReverseSimpleString.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StringToolkitTest$ToTitleCaseTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseMultipleSpaces.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseSimple.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseWithNumbers.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StringToolkitTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StringToolkitTest.testCapitalize.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.phase-01-fundamentals [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/Angular/quadrel-starter/java-master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CliCalculator.executor": "Debug",
+    "Application.Main.executor": "Run",
+    "JUnit.BankTransferPaymentTest.executor": "Run",
+    "JUnit.CliCalculatorTest.executor": "Coverage",
+    "JUnit.StringToolkitTest$CompressTests.executor": "Run",
+    "JUnit.StringToolkitTest$CompressTests.testCompressBoundary.executor": "Debug",
+    "JUnit.StringToolkitTest$CompressTests.testCompressSimple.executor": "Run",
+    "JUnit.StringToolkitTest$EdgeCasesTests.testWhitespaceOnly.executor": "Run",
+    "JUnit.StringToolkitTest$IsPalindromeTests.executor": "Run",
+    "JUnit.StringToolkitTest$IsPalindromeTests.testPalindromeCaseInsensitive.executor": "Run",
+    "JUnit.StringToolkitTest$IsPalindromeTests.testPalindromeWithSpaces.executor": "Run",
+    "JUnit.StringToolkitTest$MostFrequentCharTests.testMostFrequentVariousStrings.executor": "Debug",
+    "JUnit.StringToolkitTest$PerformanceTests.testLargeCompression.executor": "Debug",
+    "JUnit.StringToolkitTest$ReverseTests.testReverseSimpleString.executor": "Run",
+    "JUnit.StringToolkitTest$ToTitleCaseTests.executor": "Run",
+    "JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseMultipleSpaces.executor": "Debug",
+    "JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseSimple.executor": "Debug",
+    "JUnit.StringToolkitTest$ToTitleCaseTests.testToTitleCaseWithNumbers.executor": "Debug",
+    "JUnit.StringToolkitTest.executor": "Run",
+    "JUnit.StringToolkitTest.testCapitalize.executor": "Run",
+    "Maven.phase-01-fundamentals [clean,install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.restore.workspace.module": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Workspace/java-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="JUnit.BankTransferPaymentTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exercises.employee.Main" />
@@ -260,6 +222,7 @@
       <workItem from="1773554970408" duration="11737000" />
       <workItem from="1773582030511" duration="861000" />
       <workItem from="1773583749774" duration="15000" />
+      <workItem from="1773672746652" duration="808000" />
     </task>
     <task id="LOCAL-00001" summary="phase 1 exercises and test">
       <option name="closed" value="true" />
@@ -285,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773476829334</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="phase 2 exercises">
+      <option name="closed" value="true" />
+      <created>1773672887877</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773672887877</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +265,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="phase 1 exercises and test" />
     <MESSAGE value="phase 2 study guide" />
-    <option name="LAST_COMMIT_MESSAGE" value="phase 2 study guide" />
+    <MESSAGE value="phase 2 exercises" />
+    <option name="LAST_COMMIT_MESSAGE" value="phase 2 exercises" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
