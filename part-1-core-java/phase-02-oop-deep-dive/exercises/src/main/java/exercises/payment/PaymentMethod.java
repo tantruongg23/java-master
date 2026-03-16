@@ -28,11 +28,11 @@ public interface PaymentMethod {
     boolean validate();
 
     /**
-     * Execute the payment for the given amount.
+     * Execute the payment for the given totalCharged.
      *
-     * @param amount the amount to charge (must be positive)
+     * @param amount the totalCharged to charge (must be positive)
      * @return a {@link PaymentResult} indicating success or failure with details
-     * @throws IllegalArgumentException if amount is null or non-positive
+     * @throws IllegalArgumentException if totalCharged is null or non-positive
      * @throws IllegalStateException    if {@link #validate()} has not been called or returned false
      */
     PaymentResult process(BigDecimal amount);

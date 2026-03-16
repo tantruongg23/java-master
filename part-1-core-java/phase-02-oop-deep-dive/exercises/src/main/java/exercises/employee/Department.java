@@ -29,8 +29,10 @@ public class Department {
     public void addEmployee(Employee employee) {
         // TODO: Check for duplicates (use equals/contains), then add.
         //       Throw IllegalArgumentException if already present.
-
-        throw new UnsupportedOperationException("TODO: implement addEmployee()");
+        if (employees.contains(employee)) {
+            throw new IllegalArgumentException("Employee already in department");
+        }
+        employees.add(employee);
     }
 
     /**
@@ -42,8 +44,7 @@ public class Department {
     public boolean removeEmployee(String employeeId) {
         // TODO: Find the employee by id and remove them.
         //       Return true if removed, false if not found.
-
-        throw new UnsupportedOperationException("TODO: implement removeEmployee()");
+        return employees.removeIf(e -> e.getId().equals(employeeId));
     }
 
     /**
@@ -54,8 +55,7 @@ public class Department {
     public double getTotalPayroll() {
         // TODO: Iterate over employees, sum calculateSalary().
         //       Demonstrate polymorphism — each employee type computes its own salary.
-
-        throw new UnsupportedOperationException("TODO: implement getTotalPayroll()");
+        return employees.stream().mapToDouble(Employee::calculateSalary).sum();
     }
 
     /**
@@ -70,8 +70,7 @@ public class Department {
     public <T extends Employee> List<T> getEmployeesByType(Class<T> type) {
         // TODO: Filter the employee list by instanceof check and cast.
         //       Return a new list (defensive copy).
-
-        throw new UnsupportedOperationException("TODO: implement getEmployeesByType()");
+        return employees.stream().filter(type::isInstance).map(type::cast).toList();
     }
 
     /**

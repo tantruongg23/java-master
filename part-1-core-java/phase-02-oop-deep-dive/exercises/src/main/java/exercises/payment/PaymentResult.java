@@ -8,23 +8,38 @@ import java.time.Instant;
  *
  * @param success       whether the payment was processed successfully
  * @param transactionId a unique identifier for the transaction (null if failed)
- * @param amount        the amount that was charged
+ * @param totalCharged        the totalCharged that was charged
  * @param message       a human-readable status message
  * @param timestamp     when the payment was processed
  */
 public record PaymentResult(
-        boolean success,
+        PaymentStatus status,
         String transactionId,
-        BigDecimal amount,
+        BigDecimal originalAmount,
+        BigDecimal fee,
+        BigDecimal totalCharged,
         String message,
         Instant timestamp
 ) {
 
-    public static PaymentResult success(String transactionId, BigDecimal amount) {
-        return new PaymentResult(true, transactionId, amount, "Payment processed successfully", Instant.now());
+    public static PaymentResult completed(String txId, BigDecimal amount, BigDecimal fee) {
+        return new PaymentResult(
+                PaymentStatus.COMPLETED, txId, amount, fee,
+                amount.add(fee), "Payment completed", Instant.now()
+        );
     }
 
-    public static PaymentResult failure(BigDecimal amount, String reason) {
-        return new PaymentResult(false, null, amount, reason, Instant.now());
+    public static PaymentResult pending(String txId, BigDecimal amount, BigDecimal fee, String message) {
+        return new PaymentResult(
+                PaymentStatus.PENDING, txId, amount, fee,
+                amount.add(fee), message, Instant.now()
+        );
+    }
+
+    public static PaymentResult failed(BigDecimal amount, String reason) {
+        return new PaymentResult(
+                PaymentStatus.FAILED, null, amount, BigDecimal.ZERO,
+                amount, reason, Instant.now()
+        );
     }
 }

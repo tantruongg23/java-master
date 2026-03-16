@@ -36,11 +36,13 @@ import java.util.Objects;
  *
  * <p>BONUS: Implement an Observer pattern with {@code OverdueNotifier}.
  */
-public abstract class LibraryItem {
+public abstract sealed class LibraryItem permits Book, DVD, Magazine{
 
     private final String title;
     private final int year;
     private final String id;
+    private String currentBorrowerId;
+    private boolean available;
 
     protected LibraryItem(String title, int year, String id) {
         this.title = Objects.requireNonNull(title, "title must not be null");
@@ -63,6 +65,22 @@ public abstract class LibraryItem {
 
     public String getId() {
         return id;
+    }
+
+    public String getCurrentBorrowerId() {
+        return currentBorrowerId;
+    }
+
+    public void setCurrentBorrowerId(String currentBorrowerId) {
+        this.currentBorrowerId = currentBorrowerId;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
     @Override

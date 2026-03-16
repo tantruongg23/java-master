@@ -19,7 +19,7 @@ import java.util.Objects;
  *   <li>{@code Manager extends FullTimeEmployee} — manages a team; salary includes a 15% bonus</li>
  * </ul>
  */
-public abstract class Employee {
+public abstract class Employee implements Comparable<Employee>{
 
     private final String name;
     private final String id;
@@ -34,7 +34,7 @@ public abstract class Employee {
     /**
      * Calculate the employee's salary for the current period.
      *
-     * @return the salary amount
+     * @return the salary totalCharged
      */
     public abstract double calculateSalary();
 
@@ -69,5 +69,10 @@ public abstract class Employee {
                 ", id='" + id + '\'' +
                 ", hireDate=" + hireDate +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return Double.compare(o.calculateSalary(), calculateSalary());
     }
 }
