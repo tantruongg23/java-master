@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d913ef7e-6987-46ac-9e5f-1016217d13fa" name="Changes" comment="phase 2 exercises">
-      <change afterPath="$PROJECT_DIR$/part-1-core-java/phase-03-collections-generics/STUDY-GUIDE.md" afterDir="false" />
+    <list default="true" id="d913ef7e-6987-46ac-9e5f-1016217d13fa" name="Changes" comment="phase 3 study guide">
+      <change beforePath="$PROJECT_DIR$/part-1-core-java/phase-03-collections-generics/STUDY-GUIDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/part-1-core-java/phase-03-collections-generics/STUDY-GUIDE.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +222,7 @@
       <workItem from="1773554970408" duration="11737000" />
       <workItem from="1773582030511" duration="861000" />
       <workItem from="1773583749774" duration="15000" />
-      <workItem from="1773672746652" duration="808000" />
+      <workItem from="1773672746652" duration="2294000" />
     </task>
     <task id="LOCAL-00001" summary="phase 1 exercises and test">
       <option name="closed" value="true" />
@@ -256,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773672887877</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="phase 3 study guide">
+      <option name="closed" value="true" />
+      <created>1773675234903</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773675234903</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +274,8 @@
     <MESSAGE value="phase 1 exercises and test" />
     <MESSAGE value="phase 2 study guide" />
     <MESSAGE value="phase 2 exercises" />
-    <option name="LAST_COMMIT_MESSAGE" value="phase 2 exercises" />
+    <MESSAGE value="phase 3 study guide" />
+    <option name="LAST_COMMIT_MESSAGE" value="phase 3 study guide" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

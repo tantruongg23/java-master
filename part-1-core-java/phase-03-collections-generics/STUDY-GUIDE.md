@@ -1,6 +1,6 @@
 # Study Guide — Phase 03: Collections & Generics
 
-> **Estimated Duration:** ~2–3 weeks (~27 hours)
+> **Estimated Duration:** ~~2–3 weeks (~~27 hours)
 > **Prerequisites:** Phase 01 (Fundamentals), Phase 02 (OOP Deep Dive)
 > **Philosophy:** *If you can explain it clearly to someone else, you truly understand it. This guide goes deep so that you can.*
 
@@ -50,15 +50,17 @@ Generics, in turn, let you write **one piece of code** that works safely across 
 
 ### Why You Can't Skip This Phase
 
-| Scenario | What You Need |
-|----------|---------------|
-| Look up a user by ID in O(1) | `HashMap<String, User>` |
-| Keep a sorted leaderboard | `TreeMap<Integer, Player>` or `TreeSet<Player>` |
-| Process tasks in priority order | `PriorityQueue<Task>` |
-| Cache the N most recent API responses | `LinkedHashMap` with access-order (LRU cache) |
-| Enforce unique email addresses | `HashSet<String>` |
-| Build a type-safe data access layer | Generics: `Repository<T extends Identifiable<ID>, ID>` |
-| Write a method that accepts any `List` of `Number` subclasses | Wildcards: `List<? extends Number>` |
+
+| Scenario                                                      | What You Need                                          |
+| ------------------------------------------------------------- | ------------------------------------------------------ |
+| Look up a user by ID in O(1)                                  | `HashMap<String, User>`                                |
+| Keep a sorted leaderboard                                     | `TreeMap<Integer, Player>` or `TreeSet<Player>`        |
+| Process tasks in priority order                               | `PriorityQueue<Task>`                                  |
+| Cache the N most recent API responses                         | `LinkedHashMap` with access-order (LRU cache)          |
+| Enforce unique email addresses                                | `HashSet<String>`                                      |
+| Build a type-safe data access layer                           | Generics: `Repository<T extends Identifiable<ID>, ID>` |
+| Write a method that accepts any `List` of `Number` subclasses | Wildcards: `List<? extends Number>`                    |
+
 
 Interviews, frameworks (Spring, Hibernate), and production code assume fluency with these tools. Collections and Generics aren't "nice to know" — they're table stakes.
 
@@ -105,11 +107,13 @@ Phase 03: Collections & Generics
 
 ### Recommended Order
 
-| Week | Focus | Hours | Key Activity |
-|------|-------|-------|-------------|
+
+| Week       | Focus                                         | Hours | Key Activity                                                                      |
+| ---------- | --------------------------------------------- | ----- | --------------------------------------------------------------------------------- |
 | **Week 1** | Topics 1–5 (Hierarchy, List, Set, Map, Queue) | ~12 h | Understand internal mechanics. Draw diagrams. Write code for every example below. |
-| **Week 2** | Topics 6–9 + Generics Part II | ~10 h | Write generic classes. Practice PECS on paper. Build Comparator chains. |
-| **Week 3** | Exercises + Self-Assessment | ~5 h | Complete all 4 exercises. Answer interview questions out loud. |
+| **Week 2** | Topics 6–9 + Generics Part II                 | ~10 h | Write generic classes. Practice PECS on paper. Build Comparator chains.           |
+| **Week 3** | Exercises + Self-Assessment                   | ~5 h  | Complete all 4 exercises. Answer interview questions out loud.                    |
+
 
 ### How to Study Each Topic
 
@@ -215,14 +219,16 @@ After add("E") — resize triggered (new capacity = 4 + 4>>1 = 6):
 
 **Performance:**
 
-| Operation | Time | Why |
-|-----------|------|-----|
-| `get(index)` | O(1) | Direct array index: `elementData[index]` |
+
+| Operation             | Time           | Why                                                       |
+| --------------------- | -------------- | --------------------------------------------------------- |
+| `get(index)`          | O(1)           | Direct array index: `elementData[index]`                  |
 | `add(element)` at end | O(1) amortized | Append to end; occasionally O(n) for array copy on resize |
-| `add(index, element)` | O(n) | Must shift all elements after `index` right by one |
-| `remove(index)` | O(n) | Must shift all elements after `index` left by one |
-| `contains(element)` | O(n) | Linear scan with `equals()` |
-| `size()` | O(1) | Stored as a field |
+| `add(index, element)` | O(n)           | Must shift all elements after `index` right by one        |
+| `remove(index)`       | O(n)           | Must shift all elements after `index` left by one         |
+| `contains(element)`   | O(n)           | Linear scan with `equals()`                               |
+| `size()`              | O(1)           | Stored as a field                                         |
+
 
 **Real-World Example — Managing an Order's Line Items:**
 
@@ -291,13 +297,15 @@ Each `Node<E>` holds: `E item`, `Node<E> prev`, `Node<E> next`.
 
 **Performance:**
 
-| Operation | Time | Why |
-|-----------|------|-----|
-| `addFirst(e)` / `addLast(e)` | O(1) | Just rewire head/tail pointers |
-| `removeFirst()` / `removeLast()` | O(1) | Just rewire head/tail pointers |
-| `get(index)` | O(n) | Must traverse from head or tail (whichever is closer) |
-| `add(index, element)` | O(n) | Must traverse to find the position; the actual insertion is O(1) |
-| `contains(element)` | O(n) | Linear scan |
+
+| Operation                        | Time | Why                                                              |
+| -------------------------------- | ---- | ---------------------------------------------------------------- |
+| `addFirst(e)` / `addLast(e)`     | O(1) | Just rewire head/tail pointers                                   |
+| `removeFirst()` / `removeLast()` | O(1) | Just rewire head/tail pointers                                   |
+| `get(index)`                     | O(n) | Must traverse from head or tail (whichever is closer)            |
+| `add(index, element)`            | O(n) | Must traverse to find the position; the actual insertion is O(1) |
+| `contains(element)`              | O(n) | Linear scan                                                      |
+
 
 **Real-World Example — Browser History (Back/Forward):**
 
@@ -527,13 +535,15 @@ In-order traversal gives: [5, 10, 15, 20, 30] — always sorted
 
 **Performance:**
 
-| Operation | Time |
-|-----------|------|
-| `add(e)` | O(log n) |
-| `contains(e)` | O(log n) |
-| `remove(e)` | O(log n) |
-| `first()` / `last()` | O(log n) |
+
+| Operation                 | Time     |
+| ------------------------- | -------- |
+| `add(e)`                  | O(log n) |
+| `contains(e)`             | O(log n) |
+| `remove(e)`               | O(log n) |
+| `first()` / `last()`      | O(log n) |
 | `floor(e)` / `ceiling(e)` | O(log n) |
+
 
 **The `NavigableSet` methods (what makes TreeSet special):**
 
@@ -579,7 +589,7 @@ public class Leaderboard {
 }
 ```
 
-**When to use:** You need a unique collection that is always sorted, or you need range queries (`subSet`, `headSet`, `tailSet`), or nearest-neighbor lookups (`floor`, `ceiling`).
+**When to use:** You need a unique collection that is  always sorted, or you need range queries (`subSet`, `headSet`, `tailSet`), or nearest-neighbor lookups (`floor`, `ceiling`).
 
 **When NOT to use:** If you just need uniqueness without sorting — use `HashSet` (O(1) vs O(log n)).
 
@@ -718,13 +728,15 @@ After treeification (chain > 8 entries in one bucket):
 
 **Performance:**
 
-| Operation | Average | Worst (before treeification) | Worst (after treeification) |
-|-----------|---------|------------------------------|---------------------------|
-| `put(k, v)` | O(1) | O(n) | O(log n) |
-| `get(k)` | O(1) | O(n) | O(log n) |
-| `remove(k)` | O(1) | O(n) | O(log n) |
-| `containsKey(k)` | O(1) | O(n) | O(log n) |
-| `containsValue(v)` | O(n) | O(n) | O(n) |
+
+| Operation          | Average | Worst (before treeification) | Worst (after treeification) |
+| ------------------ | ------- | ---------------------------- | --------------------------- |
+| `put(k, v)`        | O(1)    | O(n)                         | O(log n)                    |
+| `get(k)`           | O(1)    | O(n)                         | O(log n)                    |
+| `remove(k)`        | O(1)    | O(n)                         | O(log n)                    |
+| `containsKey(k)`   | O(1)    | O(n)                         | O(log n)                    |
+| `containsValue(v)` | O(n)    | O(n)                         | O(n)                        |
+
 
 **The hashCode/equals Contract — Critical:**
 
@@ -797,6 +809,7 @@ for (Employee emp : employees) {
 **What it is:** Extends `HashMap` by threading a doubly-linked list through all entries, so iteration follows a predictable order.
 
 **Two modes:**
+
 1. **Insertion order** (default) — entries iterate in the order they were first put
 2. **Access order** (`accessOrder=true`) — entries move to the tail on every `get()` or `put()`
 
@@ -935,11 +948,13 @@ public ImageMetadata getMetadata(Image img) {
 
 **Queue's two method families:**
 
-| Operation | Throws Exception | Returns Special Value |
-|-----------|-----------------|----------------------|
-| Insert | `add(e)` → throws if full | `offer(e)` → returns `false` |
-| Remove | `remove()` → throws if empty | `poll()` → returns `null` |
-| Examine | `element()` → throws if empty | `peek()` → returns `null` |
+
+| Operation | Throws Exception              | Returns Special Value        |
+| --------- | ----------------------------- | ---------------------------- |
+| Insert    | `add(e)` → throws if full     | `offer(e)` → returns `false` |
+| Remove    | `remove()` → throws if empty  | `poll()` → returns `null`    |
+| Examine   | `element()` → throws if empty | `peek()` → returns `null`    |
+
 
 ---
 
@@ -1163,8 +1178,8 @@ if (modCount != expectedModCount)
 
 Collections like `CopyOnWriteArrayList` and `ConcurrentHashMap` use different strategies:
 
-- **`CopyOnWriteArrayList`** — every write creates a new copy of the internal array. Iterators work on the snapshot. Safe but expensive for writes.
-- **`ConcurrentHashMap`** — weakly consistent iterators. Never throw CME, may or may not reflect concurrent modifications.
+- `**CopyOnWriteArrayList**` — every write creates a new copy of the internal array. Iterators work on the snapshot. Safe but expensive for writes.
+- `**ConcurrentHashMap**` — weakly consistent iterators. Never throw CME, may or may not reflect concurrent modifications.
 
 ---
 
@@ -1203,6 +1218,7 @@ List<String> repeated = Collections.nCopies(5, "default");
 ## ConcurrentHashMap Preview
 
 **Key differences from HashMap:**
+
 - No null keys or null values allowed (avoids ambiguity in concurrent operations)
 - Weakly consistent iterators — never throw `ConcurrentModificationException`
 - Node-level CAS + synchronized (Java 8+) instead of locking the whole map
@@ -1488,6 +1504,7 @@ public static <T extends Serializable & Comparable<T>> void process(T item) {
 ```
 
 **Rules:**
+
 - Use `extends` for both class bounds and interface bounds (never `implements` in generics)
 - At most one class bound, and it must come first: `<T extends MyClass & Interface1 & Interface2>`
 
@@ -1621,11 +1638,13 @@ addNumbers(objs); // works — List<Object> accepts ? super Integer
 
 **The single most important rule for wildcards:**
 
-| If a structure... | Use | Mnemonic |
-|-------------------|-----|----------|
-| **Produces** values (you READ from it) | `? extends T` | **P**roducer **E**xtends |
-| **Consumes** values (you WRITE to it) | `? super T` | **C**onsumer **S**uper |
-| Both reads and writes | Exact type `T` | No wildcard |
+
+| If a structure...                      | Use            | Mnemonic                 |
+| -------------------------------------- | -------------- | ------------------------ |
+| **Produces** values (you READ from it) | `? extends T`  | **P**roducer **E**xtends |
+| **Consumes** values (you WRITE to it)  | `? super T`    | **C**onsumer **S**uper   |
+| Both reads and writes                  | Exact type `T` | No wildcard              |
+
 
 **Real-World Example — Flexible Data Transfer:**
 
@@ -1697,14 +1716,16 @@ String s = (String) strings.get(0); // cast is invisible but present
 
 ### What You CANNOT Do Because of Type Erasure
 
-| Forbidden | Why | Workaround |
-|-----------|-----|------------|
-| `new T()` | T is unknown at runtime | Pass `Supplier<T>`: `Supplier<T> factory = MyClass::new;` |
-| `new T[10]` | Arrays need to know their element type at runtime | Use `(T[]) new Object[10]` with `@SuppressWarnings` or use `List<T>` |
-| `obj instanceof List<String>` | Erased to `List` — can only check `instanceof List` | Check `instanceof List<?>` then verify contents |
-| `static T field` | T is per-instance; static is per-class | Use `static Object` or redesign |
-| `catch (T e)` | Exception handling is at runtime; T doesn't exist | Catch specific exceptions |
-| Overload `foo(List<String>)` and `foo(List<Integer>)` | Both erase to `foo(List)` — same signature | Rename methods or use different parameter types |
+
+| Forbidden                                             | Why                                                 | Workaround                                                           |
+| ----------------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------- |
+| `new T()`                                             | T is unknown at runtime                             | Pass `Supplier<T>`: `Supplier<T> factory = MyClass::new;`            |
+| `new T[10]`                                           | Arrays need to know their element type at runtime   | Use `(T[]) new Object[10]` with `@SuppressWarnings` or use `List<T>` |
+| `obj instanceof List<String>`                         | Erased to `List` — can only check `instanceof List` | Check `instanceof List<?>` then verify contents                      |
+| `static T field`                                      | T is per-instance; static is per-class              | Use `static Object` or redesign                                      |
+| `catch (T e)`                                         | Exception handling is at runtime; T doesn't exist   | Catch specific exceptions                                            |
+| Overload `foo(List<String>)` and `foo(List<Integer>)` | Both erase to `foo(List)` — same signature          | Rename methods or use different parameter types                      |
+
 
 ---
 
@@ -1816,49 +1837,57 @@ public static <T> List<T> toList(T... items) {
 
 ## Big-O Cheat Sheet
 
-| Collection | `add` | `get` / `contains` | `remove` | Order |
-|------------|-------|---------------------|----------|-------|
-| `ArrayList` | O(1)* | O(1) by index / O(n) contains | O(n) | Insertion |
-| `LinkedList` | O(1) at ends | O(n) | O(1) at ends / O(n) by index | Insertion |
-| `ArrayDeque` | O(1)* | O(n) contains | O(1) at ends | Insertion |
-| `HashSet` | O(1)* | O(1)* | O(1)* | None |
-| `LinkedHashSet` | O(1)* | O(1)* | O(1)* | Insertion |
-| `TreeSet` | O(log n) | O(log n) | O(log n) | Sorted |
-| `HashMap` | O(1)* | O(1)* | O(1)* | None |
-| `LinkedHashMap` | O(1)* | O(1)* | O(1)* | Insertion/Access |
-| `TreeMap` | O(log n) | O(log n) | O(log n) | Sorted (keys) |
-| `PriorityQueue` | O(log n) | O(n) | O(log n) poll / O(n) arbitrary | Priority (min-heap) |
 
-*\* = amortized, assuming good hash distribution*
+| Collection      | `add`        | `get` / `contains`            | `remove`                       | Order               |
+| --------------- | ------------ | ----------------------------- | ------------------------------ | ------------------- |
+| `ArrayList`     | O(1)*        | O(1) by index / O(n) contains | O(n)                           | Insertion           |
+| `LinkedList`    | O(1) at ends | O(n)                          | O(1) at ends / O(n) by index   | Insertion           |
+| `ArrayDeque`    | O(1)*        | O(n) contains                 | O(1) at ends                   | Insertion           |
+| `HashSet`       | O(1)*        | O(1)*                         | O(1)*                          | None                |
+| `LinkedHashSet` | O(1)*        | O(1)*                         | O(1)*                          | Insertion           |
+| `TreeSet`       | O(log n)     | O(log n)                      | O(log n)                       | Sorted              |
+| `HashMap`       | O(1)*        | O(1)*                         | O(1)*                          | None                |
+| `LinkedHashMap` | O(1)*        | O(1)*                         | O(1)*                          | Insertion/Access    |
+| `TreeMap`       | O(log n)     | O(log n)                      | O(log n)                       | Sorted (keys)       |
+| `PriorityQueue` | O(log n)     | O(n)                          | O(log n) poll / O(n) arbitrary | Priority (min-heap) |
+
+
+ *= amortized, assuming good hash distribution*
 
 ---
 
 ## Exercises Roadmap
 
-| # | Exercise | Concepts Practiced | Difficulty |
-|---|----------|--------------------|------------|
-| 1 | **Custom HashMap** | Hashing, buckets, linked lists, resizing, `Iterable` | ★★★☆☆ |
-| 2 | **LRU Cache** | `LinkedHashMap`, doubly-linked list, O(1) design | ★★★☆☆ |
-| 3 | **Inventory System** | `HashMap`, `TreeMap`, `PriorityQueue`, `Comparable`, `Comparator` | ★★★★☆ |
-| 4 | **Generic Repository** | Bounded generics, wildcards, PECS, `Predicate` | ★★★★☆ |
+
+| #   | Exercise               | Concepts Practiced                                                | Difficulty |
+| --- | ---------------------- | ----------------------------------------------------------------- | ---------- |
+| 1   | **Custom HashMap**     | Hashing, buckets, linked lists, resizing, `Iterable`              | ★★★☆☆      |
+| 2   | **LRU Cache**          | `LinkedHashMap`, doubly-linked list, O(1) design                  | ★★★☆☆      |
+| 3   | **Inventory System**   | `HashMap`, `TreeMap`, `PriorityQueue`, `Comparable`, `Comparator` | ★★★★☆      |
+| 4   | **Generic Repository** | Bounded generics, wildcards, PECS, `Predicate`                    | ★★★★☆      |
+
 
 ### Exercise Tips
 
 **Exercise 1 (Custom HashMap):**
+
 - Start with a fixed-size bucket array and `put`/`get`. Add resizing last.
 - The `hashCode() & (capacity - 1)` trick only works when capacity is a power of 2.
 - Test with `null` keys — they go in bucket 0.
 
 **Exercise 2 (LRU Cache):**
+
 - Try Option A first (LinkedHashMap) — it's 15 lines of code. Then try Option B (manual doubly-linked list + HashMap) for deeper understanding.
 - The trick: every `get()` must move the accessed node to the tail of the list.
 
 **Exercise 3 (Inventory System):**
+
 - Use `BigDecimal` for prices (never `double` for money).
 - `TreeMap.subMap(min, true, max, true)` gives you range queries for free.
 - The `PriorityQueue` for low-stock alerts: iterate and collect items below threshold.
 
 **Exercise 4 (Generic Repository):**
+
 - The signature `<T extends Identifiable<ID>, ID>` means T must expose an `getId()` method returning type ID.
 - For the PECS demo: write a `transferAll` method that reads from `Repository<? extends T, ID>` and writes to `Repository<? super T, ID>`.
 
@@ -1866,45 +1895,49 @@ public static <T> List<T> toList(T... items) {
 
 ## Common Mistakes to Avoid
 
-| Mistake | Consequence | Fix |
-|---------|-------------|-----|
-| Not overriding `hashCode()` when overriding `equals()` | HashMap/HashSet silently fails to find entries | Always override both together |
-| Using `==` instead of `.equals()` for keys | Works for String literals (interning) but fails for `new String(...)` | Always use `.equals()` |
-| Modifying a collection during for-each loop | `ConcurrentModificationException` | Use `Iterator.remove()` or `removeIf()` |
-| Using raw types (`List` instead of `List<String>`) | No type safety, compiler warnings | Always parameterize |
-| Using `double` for money in Product.price | Rounding errors (0.1 + 0.2 ≠ 0.3) | Use `BigDecimal` |
-| Choosing `LinkedList` as default List | Cache-unfriendly, slower than ArrayList for most workloads | Default to `ArrayList` |
-| Ignoring PECS when designing generic APIs | Overly restrictive method signatures | Apply extends/super correctly |
-| Using mutable objects as HashMap keys | Entries become unreachable after key mutation | Use immutable keys (String, Integer, records) |
-| Printing a `PriorityQueue` expecting sorted output | Internal heap array is NOT sorted | Only `poll()` guarantees order |
-| Mixing arrays and generics | Compile errors or heap pollution | Prefer `List<T>` over `T[]` |
+
+| Mistake                                                | Consequence                                                           | Fix                                           |
+| ------------------------------------------------------ | --------------------------------------------------------------------- | --------------------------------------------- |
+| Not overriding `hashCode()` when overriding `equals()` | HashMap/HashSet silently fails to find entries                        | Always override both together                 |
+| Using `==` instead of `.equals()` for keys             | Works for String literals (interning) but fails for `new String(...)` | Always use `.equals()`                        |
+| Modifying a collection during for-each loop            | `ConcurrentModificationException`                                     | Use `Iterator.remove()` or `removeIf()`       |
+| Using raw types (`List` instead of `List<String>`)     | No type safety, compiler warnings                                     | Always parameterize                           |
+| Using `double` for money in Product.price              | Rounding errors (0.1 + 0.2 ≠ 0.3)                                     | Use `BigDecimal`                              |
+| Choosing `LinkedList` as default List                  | Cache-unfriendly, slower than ArrayList for most workloads            | Default to `ArrayList`                        |
+| Ignoring PECS when designing generic APIs              | Overly restrictive method signatures                                  | Apply extends/super correctly                 |
+| Using mutable objects as HashMap keys                  | Entries become unreachable after key mutation                         | Use immutable keys (String, Integer, records) |
+| Printing a `PriorityQueue` expecting sorted output     | Internal heap array is NOT sorted                                     | Only `poll()` guarantees order                |
+| Mixing arrays and generics                             | Compile errors or heap pollution                                      | Prefer `List<T>` over `T[]`                   |
+
 
 ---
 
 ## Key Terms Glossary
 
-| Term | Definition |
-|------|-----------|
-| **Amortized O(1)** | Usually O(1), but occasionally O(n) for resizing; averaged over all operations it's O(1) |
-| **Autoboxing** | Automatic conversion between primitives and wrappers (int ↔ Integer) |
-| **Bucket** | A slot in a hash table's internal array that holds entries mapping to the same index |
-| **Capacity** | The number of buckets in a HashMap (default: 16, always a power of 2) |
-| **Comparable** | Interface for natural ordering — the class defines its own sort order |
-| **Comparator** | External ordering strategy — sort objects without modifying their class |
-| **Covariant** | Arrays are covariant: `String[]` IS-A `Object[]`. Generics are invariant: `List<String>` is NOT `List<Object>` |
-| **Diamond operator** | The `<>` in `new ArrayList<>()` — lets the compiler infer the type |
-| **Fail-fast** | Iterator throws `ConcurrentModificationException` if the collection is modified during iteration |
-| **Fail-safe** | Iterator works on a snapshot; never throws, but may show stale data |
-| **Heap pollution** | Occurs when a variable of a parameterized type refers to an object of a different type |
-| **Invariant** | Generic types are invariant: `List<Dog>` is NOT a subtype of `List<Animal>` |
-| **Load factor** | Threshold ratio (`size / capacity`) that triggers resize (default: 0.75) |
-| **PECS** | Producer Extends, Consumer Super — rule for choosing wildcard bounds |
-| **Raw type** | A generic type used without type parameters: `List` instead of `List<String>`. Bypasses type safety. |
-| **Reifiable type** | A type whose information is fully available at runtime (e.g., `List`, `String`, but NOT `List<String>`) |
-| **Treeification** | HashMap converts a long collision chain (>8 entries) from linked list to Red-Black tree |
-| **Type erasure** | Compiler removes generic type info at compile time; the JVM sees raw types only |
-| **Type witness** | Explicit type argument on a method call: `Collections.<String>emptyList()` |
-| **Wildcard** | `?` in generics — represents an unknown type; can be bounded with `extends` or `super` |
+
+| Term                 | Definition                                                                                                     |
+| -------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Amortized O(1)**   | Usually O(1), but occasionally O(n) for resizing; averaged over all operations it's O(1)                       |
+| **Autoboxing**       | Automatic conversion between primitives and wrappers (int ↔ Integer)                                           |
+| **Bucket**           | A slot in a hash table's internal array that holds entries mapping to the same index                           |
+| **Capacity**         | The number of buckets in a HashMap (default: 16, always a power of 2)                                          |
+| **Comparable**       | Interface for natural ordering — the class defines its own sort order                                          |
+| **Comparator**       | External ordering strategy — sort objects without modifying their class                                        |
+| **Covariant**        | Arrays are covariant: `String[]` IS-A `Object[]`. Generics are invariant: `List<String>` is NOT `List<Object>` |
+| **Diamond operator** | The `<>` in `new ArrayList<>()` — lets the compiler infer the type                                             |
+| **Fail-fast**        | Iterator throws `ConcurrentModificationException` if the collection is modified during iteration               |
+| **Fail-safe**        | Iterator works on a snapshot; never throws, but may show stale data                                            |
+| **Heap pollution**   | Occurs when a variable of a parameterized type refers to an object of a different type                         |
+| **Invariant**        | Generic types are invariant: `List<Dog>` is NOT a subtype of `List<Animal>`                                    |
+| **Load factor**      | Threshold ratio (`size / capacity`) that triggers resize (default: 0.75)                                       |
+| **PECS**             | Producer Extends, Consumer Super — rule for choosing wildcard bounds                                           |
+| **Raw type**         | A generic type used without type parameters: `List` instead of `List<String>`. Bypasses type safety.           |
+| **Reifiable type**   | A type whose information is fully available at runtime (e.g., `List`, `String`, but NOT `List<String>`)        |
+| **Treeification**    | HashMap converts a long collision chain (>8 entries) from linked list to Red-Black tree                        |
+| **Type erasure**     | Compiler removes generic type info at compile time; the JVM sees raw types only                                |
+| **Type witness**     | Explicit type argument on a method call: `Collections.<String>emptyList()`                                     |
+| **Wildcard**         | `?` in generics — represents an unknown type; can be bounded with `extends` or `super`                         |
+
 
 ---
 
@@ -1913,38 +1946,41 @@ public static <T> List<T> toList(T... items) {
 Use this to track your study progress:
 
 **Part I — Collections**
-- [ ] **Hierarchy:** Drew the full hierarchy diagram from memory
-- [ ] **ArrayList:** Explained internal array, growth formula, and when to preallocate
-- [ ] **LinkedList:** Understood node structure, why it's rarely the best choice
-- [ ] **HashSet:** Explained it's backed by HashMap, practiced set operations (union, intersection, difference)
-- [ ] **LinkedHashSet:** Used for deduplication with order preservation
-- [ ] **TreeSet:** Used NavigableSet methods (floor, ceiling, subSet)
-- [ ] **EnumSet:** Created bit-vector-backed enum sets
-- [ ] **HashMap:** Walked through put() step-by-step, explained treeification and resize
-- [ ] **LinkedHashMap:** Built LRU cache with accessOrder=true
-- [ ] **TreeMap:** Used range queries (subMap, floorEntry, ceilingEntry)
-- [ ] **PriorityQueue:** Built a task scheduler, understood heap vs sorted order
-- [ ] **ArrayDeque:** Used as both stack and queue
-- [ ] **Comparable/Comparator:** Built multi-field Comparator chains with method references
-- [ ] **Iterators:** Reproduced and fixed ConcurrentModificationException three ways
-- [ ] **Collections utility:** Compared List.of() vs unmodifiableList vs copyOf
+
+- **Hierarchy:** Drew the full hierarchy diagram from memory
+- **ArrayList:** Explained internal array, growth formula, and when to preallocate
+- **LinkedList:** Understood node structure, why it's rarely the best choice
+- **HashSet:** Explained it's backed by HashMap, practiced set operations (union, intersection, difference)
+- **LinkedHashSet:** Used for deduplication with order preservation
+- **TreeSet:** Used NavigableSet methods (floor, ceiling, subSet)
+- **EnumSet:** Created bit-vector-backed enum sets
+- **HashMap:** Walked through put() step-by-step, explained treeification and resize
+- **LinkedHashMap:** Built LRU cache with accessOrder=true
+- **TreeMap:** Used range queries (subMap, floorEntry, ceilingEntry)
+- **PriorityQueue:** Built a task scheduler, understood heap vs sorted order
+- **ArrayDeque:** Used as both stack and queue
+- **Comparable/Comparator:** Built multi-field Comparator chains with method references
+- **Iterators:** Reproduced and fixed ConcurrentModificationException three ways
+- **Collections utility:** Compared List.of() vs unmodifiableList vs copyOf
 
 **Part II — Generics**
-- [ ] **Pain Points:** Wrote pre-generics code and experienced the ClassCastException firsthand
-- [ ] **Generic Class:** Built a Pair<A,B> and ApiResponse<T>
-- [ ] **Generic Method:** Wrote a filter method with type inference
-- [ ] **Bounded Types:** Used `<T extends Comparable<T>>` for a findMax method
-- [ ] **Wildcards:** Practiced `? extends` (producer) and `? super` (consumer)
-- [ ] **PECS:** Wrote a transfer method using both extends and super
-- [ ] **Type Erasure:** Listed 6 things you can't do and explained why
-- [ ] **Caveats:** Encountered and resolved heap pollution, raw type warning, and array-generic mismatch
+
+- **Pain Points:** Wrote pre-generics code and experienced the ClassCastException firsthand
+- **Generic Class:** Built a Pair<A,B> and ApiResponse
+- **Generic Method:** Wrote a filter method with type inference
+- **Bounded Types:** Used `<T extends Comparable<T>>` for a findMax method
+- **Wildcards:** Practiced `? extends` (producer) and `? super` (consumer)
+- **PECS:** Wrote a transfer method using both extends and super
+- **Type Erasure:** Listed 6 things you can't do and explained why
+- **Caveats:** Encountered and resolved heap pollution, raw type warning, and array-generic mismatch
 
 **Exercises**
-- [ ] **Exercise 1:** Custom HashMap — implemented with resize and iteration
-- [ ] **Exercise 2:** LRU Cache — both LinkedHashMap and manual approaches
-- [ ] **Exercise 3:** Inventory System — HashMap + TreeMap + PriorityQueue integration
-- [ ] **Exercise 4:** Generic Repository — bounded generics, wildcards, PECS demo
-- [ ] **Self-Assessment:** Completed all checklist items in README.md
+
+- **Exercise 1:** Custom HashMap — implemented with resize and iteration
+- **Exercise 2:** LRU Cache — both LinkedHashMap and manual approaches
+- **Exercise 3:** Inventory System — HashMap + TreeMap + PriorityQueue integration
+- **Exercise 4:** Generic Repository — bounded generics, wildcards, PECS demo
+- **Self-Assessment:** Completed all checklist items in README.md
 
 ---
 
